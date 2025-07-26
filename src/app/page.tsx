@@ -57,12 +57,6 @@ function PromptPayGenerator() {
 		setMobileNo(phone);
 	}, []);
 
-	useEffect(() => {
-		if (type && mobileNo && promptPayId && amount) {
-			generatePromptPay();
-		}
-	}, [type, mobileNo, promptPayId, amount]);
-
 	if (loading) {
 		return <div className={`text-center`}>กำลังสร้าง QR Code...</div>;
 	}
@@ -134,12 +128,12 @@ function PromptPayGenerator() {
 									/>
 								</div>
 							)}
-							{/* <button
+							<button
                 onClick={generatePromptPay}
                 className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-xl font-medium transition-all transform hover:scale-105 active:scale-95"
               >
                 Generate PromptPay QR
-              </button> */}
+              </button>
 						</div>
 					</div>
 
